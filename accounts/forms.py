@@ -7,9 +7,9 @@ from .models import UserBankAccount, userAddress
 
 
 class userRegistrationForm(UserCreationForm):
-    account_type = forms.CharField(max_length=20, choices=ACCOUNT_TYPE)
-    birth_date = forms.DateField(null=True, blank=True)
-    gender = forms.CharField(max_length=20, choices=GENDER_TYPE)
+    account_type = forms.ChoiceField(choices=ACCOUNT_TYPE, required=True)
+    birth_date = forms.DateField(widget=forms.DateInput(attrs={"type": "date"}))
+    gender = forms.ChoiceField(choices=GENDER_TYPE, required=True)
     street_address = forms.CharField(max_length=50)
     city = forms.CharField(max_length=50)
     postal_code = forms.IntegerField()
@@ -27,7 +27,7 @@ class userRegistrationForm(UserCreationForm):
             "account_type",
             "birth_date",
             "gender",
-            "street",
+            "street_address",
             "city",
             "postal_code",
             "country",
@@ -48,7 +48,7 @@ class userRegistrationForm(UserCreationForm):
 
             userAddress.objects.create(
                 user=acc_user,
-                street=street_address,
+                street_address=street_address,
                 city=city,
                 postal_code=postal_code,
                 country=country,
@@ -56,7 +56,7 @@ class userRegistrationForm(UserCreationForm):
 
             UserBankAccount.objects.create(
                 user=acc_user,
-                account_type=10000000+acc_user.id
+                account_type=10000000 + acc_user.id,
                 birth_date=birth_date,
                 gender=gender,
             )
