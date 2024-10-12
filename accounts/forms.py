@@ -61,3 +61,19 @@ class userRegistrationForm(UserCreationForm):
                 gender=gender,
             )
         return acc_user
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        for field in self.fields:
+            self.fields[field].widget.attrs.update(
+                {
+                    "class": (
+                        "appearance-none block w-full bg-gray-900 text-gray-300 "
+                        "border border-gray-600 rounded-lg py-3 px-4 leading-tight "
+                        "focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 "
+                        "hover:border-blue-400 transition duration-200 ease-in-out"
+                    ),
+                    "placeholder": f"Enter your {field.replace('_', ' ').capitalize()}",
+                }
+            )

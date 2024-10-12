@@ -21,7 +21,7 @@
 
       <div class="bg-gray-800 shadow-lg rounded-lg p-10">
         <!-- Title -->
-        <h1 class="font-bold text-3xl text-center text-gray-100 pb-6">Sign Up</h1>
+        <h1 class="font-bold text-3xl text-center text-gray-100 -mt-8">Sign Up</h1>
 
         <!-- Form Start -->
         <form action="" method="post" class="space-y-6">
@@ -36,7 +36,7 @@
             <div class="space-y-6">
               <!-- Username Field -->
               <div>
-                <label for="{{ form.username.id_for_label }}" class="block text-sm font-bold text-gray-200">{{ form.username.label }}</label>
+                <label for="{{ form.username.id_for_label }}" class="block uppercase text-sm font-bold text-gray-200">{{ form.username.label }}</label>
                 {{ form.username }}
                 {% if form.username.errors %}
                   {% for error in form.username.errors %}
@@ -47,7 +47,7 @@
 
               <!-- First Name Field -->
               <div>
-                <label for="{{ form.first_name.id_for_label }}" class="block text-sm font-bold text-gray-200">{{ form.first_name.label }}</label>
+                <label for="{{ form.first_name.id_for_label }}" class="block uppercase text-sm font-bold text-gray-200">{{ form.first_name.label }}</label>
                 {{ form.first_name }}
                 {% if form.first_name.errors %}
                   {% for error in form.first_name.errors %}
@@ -58,7 +58,7 @@
 
               <!-- Last Name Field -->
               <div>
-                <label for="{{ form.last_name.id_for_label }}" class="block text-sm font-bold text-gray-200">{{ form.last_name.label }}</label>
+                <label for="{{ form.last_name.id_for_label }}" class="block uppercase text-sm font-bold text-gray-200">{{ form.last_name.label }}</label>
                 {{ form.last_name }}
                 {% if form.last_name.errors %}
                   {% for error in form.last_name.errors %}
@@ -69,7 +69,7 @@
 
               <!-- Email Field -->
               <div>
-                <label for="{{ form.email.id_for_label }}" class="block text-sm font-bold text-gray-200">{{ form.email.label }}</label>
+                <label for="{{ form.email.id_for_label }}" class="block uppercase text-sm font-bold text-gray-200">{{ form.email.label }}</label>
                 {{ form.email }}
                 {% if form.email.errors %}
                   {% for error in form.email.errors %}
@@ -80,7 +80,7 @@
 
               <!-- Password1 Field -->
               <div>
-                <label for="{{ form.password1.id_for_label }}" class="block text-sm font-bold text-gray-200">{{ form.password1.label }}</label>
+                <label for="{{ form.password1.id_for_label }}" class="block uppercase text-sm font-bold text-gray-200">{{ form.password1.label }}</label>
                 {{ form.password1 }}
                 {% if form.password1.errors %}
                   {% for error in form.password1.errors %}
@@ -91,7 +91,7 @@
 
               <!-- Password2 Field -->
               <div>
-                <label for="{{ form.password2.id_for_label }}" class="block text-sm font-bold text-gray-200">{{ form.password2.label }}</label>
+                <label for="{{ form.password2.id_for_label }}" class="block uppercase text-sm font-bold text-gray-200">{{ form.password2.label }}</label>
                 {{ form.password2 }}
                 {% if form.password2.errors %}
                   {% for error in form.password2.errors %}
@@ -102,7 +102,7 @@
 
               <!-- Account Type Field -->
               <div>
-                <label for="{{ form.account_type.id_for_label }}" class="block text-sm font-bold text-gray-200">{{ form.account_type.label }}</label>
+                <label for="{{ form.account_type.id_for_label }}" class="block uppercase text-sm font-bold text-gray-200">{{ form.account_type.label }}</label>
                 {{ form.account_type }}
                 {% if form.account_type.errors %}
                   {% for error in form.account_type.errors %}
@@ -116,7 +116,7 @@
             <div class="space-y-6">
               <!-- Birth Date Field -->
               <div>
-                <label for="{{ form.birth_date.id_for_label }}" class="block text-sm font-bold text-gray-200">{{ form.birth_date.label }}</label>
+                <label for="{{ form.birth_date.id_for_label }}" class="block uppercase text-sm font-bold text-gray-200">{{ form.birth_date.label }}</label>
                 {{ form.birth_date }}
                 {% if form.birth_date.errors %}
                   {% for error in form.birth_date.errors %}
@@ -127,7 +127,7 @@
 
               <!-- Gender Field -->
               <div>
-                <label for="{{ form.gender.id_for_label }}" class="block text-sm font-bold text-gray-200">{{ form.gender.label }}</label>
+                <label for="{{ form.gender.id_for_label }}" class="block uppercase text-sm font-bold text-gray-200">{{ form.gender.label }}</label>
                 {{ form.gender }}
                 {% if form.gender.errors %}
                   {% for error in form.gender.errors %}
@@ -138,7 +138,7 @@
 
               <!-- Street Address Field -->
               <div>
-                <label for="{{ form.street_address.id_for_label }}" class="block text-sm font-bold text-gray-200">{{ form.street_address.label }}</label>
+                <label for="{{ form.street_address.id_for_label }}" class="block uppercase text-sm font-bold text-gray-200">{{ form.street_address.label }}</label>
                 {{ form.street_address }}
                 {% if form.street_address.errors %}
                   {% for error in form.street_address.errors %}
@@ -149,7 +149,7 @@
 
               <!-- City Field -->
               <div>
-                <label for="{{ form.city.id_for_label }}" class="block text-sm font-bold text-gray-200">{{ form.city.label }}</label>
+                <label for="{{ form.city.id_for_label }}" class="block uppercase text-sm font-bold text-gray-200">{{ form.city.label }}</label>
                 {{ form.city }}
                 {% if form.city.errors %}
                   {% for error in form.city.errors %}
@@ -160,7 +160,7 @@
 
               <!-- Postal Code Field -->
               <div>
-                <label for="{{ form.postal_code.id_for_label }}" class="block text-sm font-bold text-gray-200">{{ form.postal_code.label }}</label>
+                <label for="{{ form.postal_code.id_for_label }}" class="block uppercase text-sm font-bold text-gray-200">{{ form.postal_code.label }}</label>
                 {{ form.postal_code }}
                 {% if form.postal_code.errors %}
                   {% for error in form.postal_code.errors %}
@@ -171,7 +171,7 @@
 
               <!-- Country Field -->
               <div>
-                <label for="{{ form.country.id_for_label }}" class="block text-sm font-bold text-gray-200">{{ form.country.label }}</label>
+                <label for="{{ form.country.id_for_label }}" class="block uppercase text-sm font-bold text-gray-200">{{ form.country.label }}</label>
                 {{ form.country }}
                 {% if form.country.errors %}
                   {% for error in form.country.errors %}
