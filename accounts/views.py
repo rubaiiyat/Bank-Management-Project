@@ -12,7 +12,7 @@ class UserRegistrationView(FormView):
 
     def form_valid(self, form):
         user = form.save()
-        login(user)
+        login(self.request, user)
         return super().form_valid(form)
 
     def get_context_data(self, **kwargs):
