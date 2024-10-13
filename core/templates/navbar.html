@@ -1,0 +1,55 @@
+<nav class="bg-gray-800">
+  <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+    <div class="relative flex h-16 items-center justify-between">
+      <!-- Mobile menu button -->
+      <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+        <button type="button" class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <!-- Icon when menu is closed -->
+          <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+          <!-- Icon when menu is open -->
+          <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Logo and Navigation Links -->
+      <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+        <div class="flex flex-shrink-0 items-center">
+          <h1 class="text-2xl font-bold text-blue-600 mr-20">Bank</h1>
+        </div>
+        {% if request.user.is_authenticated %}
+          <div class="hidden sm:ml-6 sm:block">
+            <div class="flex space-x-4">
+              <!-- Navigation links -->
+              <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white focus:bg-green-600">Report</a>
+              <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white focus:bg-green-600">Deposit</a>
+              <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white focus:bg-green-600">Withdraw</a>
+              <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white focus:bg-green-600">Loan Details</a>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+
+      <!-- Profile and Authentication Links -->
+      <div class="navbar-end flex items-center">
+        {% if request.user.is_authenticated %}
+          <div class="flex items-center space-x-4">
+            <p class="text-blue-500 font-bold">Welcome, {{ request.user.first_name }}
+              (balance: {{ request.user.account.balance }})</p>
+            <a href="" class="btn bg-blue-600 text-white hover:bg-blue-700 transition-colors duration-200">Profile</a>
+            <a href="{% url 'logout' %}" class="btn bg-red-600 text-white hover:bg-red-700 transition-colors duration-200">Logout</a>
+          </div>
+        {% else %}
+          <div class="flex items-center space-x-4">
+            <a href="{% url 'login' %}" class="inline-block bg-blue-600 text-white font-semibold py-2 px-4 rounded-md shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition-colors duration-300">Login</a>
+            <a href="{% url 'register' %}" class="inline-block bg-green-600 text-white font-semibold py-2 px-4 rounded-md shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 transition-colors duration-300">Register</a>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</nav>

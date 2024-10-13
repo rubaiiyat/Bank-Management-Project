@@ -34,13 +34,13 @@ class userRegistrationForm(UserCreationForm):
         ]
 
     def save(self, commit=True):
-        acc_user = super().save(commit=False)
+        acc_user = super().save(commit=True)
 
         if commit == True:
             acc_user.save()
             account_type = self.cleaned_data.get("account_type")
             birth_date = self.cleaned_data.get("birth_date")
-            gender = self.cleaned_data.get("gendere")
+            gender = self.cleaned_data.get("gender")
             street_address = self.cleaned_data.get("street_address")
             city = self.cleaned_data.get("city")
             postal_code = self.cleaned_data.get("postal_code")
@@ -56,7 +56,8 @@ class userRegistrationForm(UserCreationForm):
 
             UserBankAccount.objects.create(
                 user=acc_user,
-                account_type=10000000 + acc_user.id,
+                account_type=account_type,
+                account_no=100000 + acc_user.id,
                 birth_date=birth_date,
                 gender=gender,
             )
