@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block title %}
-  Register
+  Profile
 {% endblock %}
 {% block body %}
   <div class="max-w-4xl mx-auto p-5">
@@ -78,11 +78,6 @@
                 {% endfor %}
               {% endif %}
             </div>
-          </div>
-
-          <!-- Right Column -->
-          <div class="space-y-6">
-            <!-- Birth Date Field -->
             <div>
               <label for="{{ form.birth_date.id_for_label }}" class="block uppercase text-sm font-bold text-gray-200">{{ form.birth_date.label }}</label>
               {{ form.birth_date }}
@@ -92,6 +87,11 @@
                 {% endfor %}
               {% endif %}
             </div>
+          </div>
+
+          <!-- Right Column -->
+          <div class="space-y-6">
+            <!-- Birth Date Field -->
 
             <!-- Gender Field -->
             <div>
