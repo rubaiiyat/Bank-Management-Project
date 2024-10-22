@@ -81,6 +81,12 @@ class LoanRequestView(TransactionCreateMixin):
         messages.success(f"Your Loan request {amount} has been sent manager")
         return super().form_valid(form)
 
+
+class TransactionReportView(LoginRequiredMixin, ListView):
+    template_name = ""
+    model = Transaction
+    balance = 0
+
     def get_queryset(self):
         queryset = super().get_queryset().filter(account=self.request.user.account)
 
@@ -97,6 +103,8 @@ class LoanRequestView(TransactionCreateMixin):
 
         else:
             self.balance = self.request.user.account.balance
+
+        return queryset.distinct()
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
